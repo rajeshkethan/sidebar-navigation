@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Required meta tags always come first -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Indoex Exchange</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.css">
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Material Design Bootstrap -->
+<link href="css/mdb.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/messi.min.css" type="text/css">
+
+    <style>
+        .chart_container a {
+            text-decoration: none;
+            font-weight: normal;
+            color: #444;
+            background-color: #F7F7F7;
+            padding: 3px;
+        }
+
+            .chart_container a:hover {
+                background-color: #2aba4c;
+                color: #fff;
+            }
+
+            .chart_container a.active {
+                color: #fff;
+                background-color: #102342;
+            }
+
+        table td {
+            font-size: 11px;
+        }
+
+
+         h2{
+            line-height: 42px;
+            font-size: 18px;
+            margin: 13px 0px 9px 4px;
+          }
+        .tdform{
+            margin: auto;
+            width: -webkit-fill-available;
+            padding: 10px;
+        }
+        .fa{
+            cursor: pointer!important;
+
+        }
+        .nav .nav-item .active{
+            color: #495057;
+            background-color: #f5f5f5;
+            border-left-color: #EEE;
+            border-right-color: #EEE;
+            border-top: 2px solid blue;
+        }
+        .for_tabs .nav-tabs li .nav-link {
+                /* background: #f5f5f5; */
+                }
+                p{
+                    /* color: #5e5e5e!important; */
+                }
+                .poptext{
+                    padding: 3px;
+
+                }
+                @media(min-width:768px) and (max-width:1024px){
+                    .popup_div_withdraw2 {
+                        width: 390px;
+                        position: fixed;
+                        top: 20%;
+                        left: 50%;
+                    }
+
+                }
+
+                @media (min-width:320px) and (max-width:576px) {
+                    .popup_div_withdraw2 {
+                        width: 390px;
+                        position: fixed;
+                        top: 20%;
+                        left: 50%;
+                    }
+                }
+
+                @media(min-width:768px) and (max-width:1024px){
+                    .popup_div_withdraw {
+                        width: 403px;
+                        position: fixed;
+                        top: 20%;
+                        left: 50%;
+                    }
+                       .btn{
+                           text-transform: capitalize!important;
+                       }
+                    .buyordertest_data {
+                        margin: 10px 0px 10px -45px;
+                    }
+                    .div_insidefield {
+                            position: absolute;
+                            top: 11px;
+                            background-color: #d3d3d3;
+                            color: #8194ac;
+                            padding: 5px;
+                            left:-29px;
+                            border-radius: 3px 0 0 3px;
+                            width: 59px;
+                  }
+                }
+
+                @media (min-width:320px) and (max-width:576px) {
+                    .popup_div_withdraw {
+                        width: 403px;
+                        position: fixed;
+                        top: 20%;
+                        left: 50%;
+                    }
+                    .buyordertest_data1{
+                            width:100%!important;
+                        }
+                    .buyordertest_data {
+                        margin: 10px 0px 10px 16px;
+                    }
+                    .buylabel {
+                        margin: -8px 0px 9px 22px;
+                        display: block;
+                        }
+                    .div_insidefield {
+                            position: absolute;
+                            top: 11px;
+                            background-color: #d3d3d3;
+                            color: #8194ac;
+                            padding: 5px;
+                            left: 33px;
+                            border-radius: 3px 0 0 3px;
+                            width: 59px;
+                  }
+                }
+                .dropdown:hover>.dropdown-menu {
+                  display: block;
+                       }
+                       footer p{
+                           color: #fff!important;
+                       }
+                       
+    </style>
+
+</head>
+
+<body class="hidden-sn mdb-skin" aria-busy="true">
+
+<!--Double navigation-->
+<header>
+        <!-- Sidebar navigation -->
+        <div id="slide-out" class="side-nav sn-bg-4 mdb-sidenav" style="transform: translateX(-100%);">
+            <ul class="custom-scrollbar list-unstyled" style="max-height:100vh;">
+                <!-- Logo -->
+                <li>
+                    <div class="logo-wrapper waves-light waves-effect waves-light">
+                        <a href=""><img src="images/logo.png" class="img-fluid flex-center"></a>
+                    </div>
+                </li>
+                <!--/. Logo -->
+                <!--Social-->
+                <li>
+                    <ul class="social">
+                        <li><a href="" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
+                        <li><a href="" class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a></li>
+                        <li><a href="" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
+                        <li><a href="" class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
+                    </ul>
+                </li>
+                <!--/Social-->
+                <!--Search Form-->
+                <!-- <li>
+                    <form class="search-form" role="search">
+                                <div class="form-group md-form mt-0 pt-1 waves-light waves-effect waves-light">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </div>
+                            </form>
+                </li> -->
+                <!--/.Search Form-->
+                <!-- Side navigation links -->
+                <li>
+                    <ul class="collapsible collapsible-accordion">
+                        <li><a class="collapsible-header waves-effect arrow-r">Trade<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect" target="blank">My Balances</a></li>
+                                    <li><a href="#" class="waves-effect" target="blank">My Transactions</a></li>
+                                    <li><a href="#" class="waves-effect" target="blank">Custom Pairing</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="collapsible-header waves-effect arrow-r">Ledger<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect" target="blank">Coin Info</a></li>
+                                    <li><a href="#" class="waves-effect" target="blank">Wallet Status</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="collapsible-header waves-effect arrow-r">Settings<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect" target="blank">Login History</a></li>
+                                  <li><a href="#" class="waves-effect" target="blank">Profile Settings</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="waves-effect" href="#" target="blank">Orders</a></li>
+                        <li><a class="waves-effect" href="#" target="blank">History</a></li>
+                        <li><a class="waves-effect" href="#" target="blank">Add coin</a></li>
+                        <li><a class="waves-effect" href="#" target="blank">Affiliate</a></li>
+                        <li><a class="waves-effect" href="#" target="blank">Invest Box</a></li>
+                        <li><a class="collapsible-header waves-effect arrow-r">Settings<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect" target="blank">Login History</a></li>
+                                  <li><a href="#" class="waves-effect" target="blank">Profile Settings</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- <div class="text-center" style="margin-top: 0px;">
+                             <button data-activates="slide-out" class="btn btn-md btn-rounded btn-light-green">Log out</button> 
+                        </div> -->
+                    </ul>
+                </li>
+                <!--/. Side navigation links -->
+            </ul>
+            <div class="sidenav-bg mask-strong"></div>
+        </div>
+        <!--/. Sidebar navigation -->
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+            <!-- SideNav slide-out button -->
+            <div class="float-left mobilemenu">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+            </div>
+            <!-- Breadcrumb-->
+            <div class="breadcrumb-dn mr-auto ">
+                <img src="images/logo.png" width="180" alt="logo" class="ml-15"/>
+            </div>
+            <div class="navview">
+                    <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                            <li class="nav-item"> <a class="nav-link waves-effect waves-light"><span class="clearfix d-none d-sm-inline-block">Dashboard</span></a> </li>
+                            <li class="nav-item dropdown"> <a class="nav-link waves-effect waves-light dropdown-toggle" data-toggle="dropdown" href="#"><span class="clearfix d-none d-sm-inline-block caret">Trade</span></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">My Balances</a></li>
+                              <li><a href="#">My Transactions</a></li>
+                              <li><a href="#">Custom Pairing</a></li>
+                            </ul></li>
+                            <li class="nav-item"> <a class="nav-link waves-effect waves-light "><span class="clearfix d-none d-sm-inline-block">Ledger</span></a> </li>
+                            <li class="nav-item  dropdown"> <a class="nav-link waves-effect waves-light dropdown-toggle" data-toggle="dropdown" href="#"><span class="clearfix d-none d-sm-inline-block">Info</span></a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">Coin Info</a></li>
+                                  <li><a href="#">Wallet Status</a></li>
+                                </ul></li>
+                               </li>
+                            <li class="nav-item  dropdown"> <a class="nav-link waves-effect waves-light dropdown-toggle" data-toggle="dropdown" href="#"><span class="clearfix d-none d-sm-inline-block">Settings</span></a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">Login History</a></li>
+                                  <li><a href="#">Profile Settings</a></li>
+                                </ul></li>
+                               </li>
+                          </li>
+                            <li class="nav-item"> <a class="nav-link waves-effect waves-light"><span class="clearfix d-none d-sm-inline-block">Orders</span></a> </li>
+                            <li class="nav-item"> <a class="nav-link waves-effect waves-light"><span class="clearfix d-none d-sm-inline-block">History</span></a> </li>
+                            <!-- <li class="nav-item"> <a class="nav-link waves-effect waves-light"><span class="clearfix d-none d-sm-inline-block">Add coin</span></a> </li> -->
+                            <li class="nav-item"> <a class="nav-link waves-effect waves-light"><span class="clearfix d-none d-sm-inline-block">Affiliate</span></a> </li>
+                            <li class="nav-item"> <a class="nav-link waves-effect waves-light"><span class="clearfix d-none d-sm-inline-block">Invest Box</span></a> </li>
+                            <li class="nav-item  dropdown" style="margin-right: 92px;"> <a class="nav-link waves-effect waves-light dropdown-toggle" data-toggle="dropdown" href="#"><span class="clearfix d-none d-sm-inline-block"><i class="fa fa-user"></i></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">some link</a></li>
+                                    <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+                                  </ul></li>
+                                 </li>
+                          <!-- <div class="float-right" style="margin-top: -7px;">
+                            <button data-activates="slide-out" class="btn btn-md btn-rounded btn-light-green">Log out</button>
+                          </div> -->
+                        </ul>
+            </div>
+        </nav>
+        <!-- /.Navbar -->
+    </header>
+    <!--/.Double navigation-->
+
+<!--Main Layout-->
+<!-- session started -->
+<div class=" content-box">
+<div id="section1">
+	<div>
+		<ul>
+			<h2><img src="images/setting-icon.png">Personal Configuration</h2>
+			<li><a href="#">Accounts	</a></li>
+			<li><a href="#">Identification	</a></li>
+			<h2><img src="images/assets-icon.png">Assets</h2>
+			<li><a href="#">My Assets</a>	</li>
+			<li><a href="#">Deposit</a>	</li>
+			<li><a href="#">Withdraw	</a></li>
+			<li><a href="#">Ledger	</a></li>
+			<li><a href="#">Addresses</a>	</li>
+			<h2><img src="images/orders-icon.png">Orders</h2>
+			<li><a href="#">Open Orders	</a></li>
+			<li><a href="#">Close Orders	</a></li>
+			<h2><img src="images/api-icon.png">API	</h2>
+			<li><a href="#">My Api	</a>	</li>
+			<h2><img src="images/promotion-icon.png">Promotion</h2>
+			<li><a href="#">Invitation Program</a></li>
+		</ul>
+	</div>
+
+</div>
+<div id="section2">
+    <div class="heading">
+		<h2>Accounts</h2>
+	</div>
+	<div class="list-items">
+		<ul>
+			<li>
+				<i class="mail-icon"></i>
+				<span>  Email	</span>
+				<span>rajeshgmail.com</span>
+			</li><li>
+				<i class="mail-icon"></i>
+				<span>Mobile Device</span>
+                <span>Cellphone not Set</span>
+                <span>Google Auth Set</span>
+                <a href="#"><span class="float-right">Binding</span></a>
+                <a href="#"><span class="float-right">Reset</span></a>  
+				
+			</li><li>
+			<i class="mail-icon"></i>
+				<span>Password</span>
+				<span>Already Set</span>
+            </li>
+            <li>
+			<i class="mail-icon"></i>
+				<span>Login to Verify code</span>
+				<span>Enabled</span>
+			</li><li>
+				<span>Pin</span>
+                <span>Already Set</span>  
+                <a href="#"><span class="float-right">Change</span></a>
+                <a href="#"><span class="float-right">Reset</span></a> 
+                
+			</li><li>
+				<i class="phone-icon"></i>
+				<span>Verify Code Preference</span>
+                <span>Google Auth Set</span>
+                <a href="#"><span class="float-right">Change</span></a>
+			</li>
+		
+		</ul>
+	</div>
+	<div class="heading">
+		<h2>Authentication level</h2>
+	</div>
+	<div class="list-items">
+		<ul>
+			<li>
+				<i class="mail-icon"></i>
+				<span>  Email	</span>
+				<span>rajeshgmail.com</span>
+			</li><li>
+				<i class="mail-icon"></i>
+				<span>Password	</span>
+				<span>**********</span>
+				<a href="#"><span class="float-right">Binding</span></a> 
+				
+			</li><li>
+			<i class="mail-icon"></i>
+				<span>Email	</span>
+				<span>rajeshgmail.com</span>
+            </li>
+            <li>
+			<i class="mail-icon"></i>
+				<span>FirstName	</span>
+				<span>rajesh</span>
+			</li><li>
+				<span>LastName	</span>
+				<span>akudari</span>
+			</li><li>
+				<i class="phone-icon"></i>
+				<span>Phone	</span>
+				<span>8522822705</span>
+			</li>
+		
+		</ul>
+    </div>
+	
+
+</div>
+</div>
+<!-- session started -->
+    <!-- popupwindow open -->
+    <div class="container">
+        <div class="popup_div_withdraw" style="display:none;">
+            <span ><i class="fa fa-times" style="float:right!important"></i></span>
+            <h3 class="text-center" >Withdraw from USDPM</h3>
+            <div class="clear:both"></div>
+             <div style="display:block">
+                 <h2 class="text-center" style="display:none">Please, confirm Your buy order</h2>
+                <div class="maindiv row">
+                     <div class="col-md-4">
+                  <label class="buylabel">Your Balance :</label>
+                  </div>
+                  <div class="col-md-8">
+                      <span class="div_insidefield ">USDPM</span>
+                  <input type="text"  class="buyordertest_data form-control" name="" value="0" style="pointer-events: none;;width: 91%">
+                  </div>
+                  <div class="clear"></div>
+                 </div>
+                 <div class="maindiv  row">
+                     <div class="col-md-4 ">
+                       <label class="buylabel" style="text-align: start">Receiver Address :</label></div>
+                       <div class="col-md-8">
+                          <input style="width: 91%" type="text" class="buyordertest_data form-control" placeholder="receiver address">
+                      </div>
+                      <div class="clear"></div>
+                </div>
+                 <div class="maindiv row"  style="display: none;">
+                     <div class="col-md-4">
+                       <label class="buylabel">Tag Id( optional) :</label></div>
+                       <div class="col-md-8">
+                          <input style="width: 91%" class="buyordertest_data" type="text" placeholder="Tag Id( optional)" >
+                      </div>
+                      <div class="clear"></div>
+                </div>
+                <div class="maindiv  row">
+                        <div class="col-md-4">
+                          <label class="buylabel">Amount :</label></div>
+                          <div class="col-md-8 ">
+                             <input style="width: 91%" type="text" class="buyordertest_data form-control" placeholder="amount" >
+                         </div>
+                    <div class="clear"></div>
+                 </div>
+                 <div class="maindiv  row">
+                    <div class="col-md-4">
+                 <label class="buylabel">Fee for Coin/Token :</label>
+                 </div>
+                 <div class="col-md-8">
+                 <span class="div_insidefield ">USDPM</span>
+                 <input type="text"  class="buyordertest_data form-control"  name="" value="0" style="pointer-events: none;width: 91%">
+                 </div>
+                 <div class="clear"></div>
+                 </div>
+                 <div class="maindiv  row">
+                     <div class="col-md-4">
+                  <label class="buylabel">Total :</label>
+                  </div>
+                  <div class="col-md-8">
+                  <span class="div_insidefield ">USDPM</span>
+                  <input type="text"  class="buyordertest_data form-control"  name="" value="0" style="pointer-events: none;width: 91%">
+                  </div>
+                  <div class="clear"></div>
+                 <div>
+                 </div>
+                 <div style="display:block">
+                     <!-- <button class="success_btn text-center">CONFIRM</button> -->
+                     <!-- <button class="failure_btn">CANCEL</button> -->
+                 </div>
+                <div class="text_class">
+                    Please carefully verify all values.
+                    <br>
+                    And verify your Email to approve this transaction.
+                 </div>
+             </div>
+            <div class="clear:both"></div>
+            <p id="withdrawinfo" style="color: #F00;align-content: center;text-align: center;"></p>
+            <div class="text-center" style="display:none;"> Invalid Input </div>
+            <div class="text-center">
+                <button class="btn btn-danger close_popup_btn btn-sm" style="background-color: #050d1a!important">Cancel</button>
+                <button class="btn btn-primary btn-sm">Ok</button>
+            </div>
+        </div>
+    </div></div>
+    <!-- popupwindow close -->
+
+
+    <!-- popupwindow2 open -->
+    <div class="container">
+        <div class="popup_div_withdraw2" id="myModal" style="display:none;">
+            <span><i class="fa fa-times" style="float:right!important"></i></span>
+            <h3 class="text-center" >DEPOSIT BTC</h3>
+            <div class="clear:both"></div>
+            <P class="poptext" style="color: green!important;align-content: center;text-align: center;">Wallet status :Online(550427 blocks)</P>
+            <p class="poptext" style="align-content: center;text-align: center;">Your Deposit address (ADDR)</p>
+                 <div class="maindiv depositclass row text-center">
+                       <div class="col-md-8">
+                          <input style="" type="text" class="buyordertest_data1 form-control" value="18tiN8GusNCvJEqbf8gVQs57uW5ZFD2MhJ">
+                      </div>
+                      <div class="col text-center">
+                      <img src="https://chart.googleapis.com/chart?chs=200x200&amp;chld=M|0&amp;cht=qr&amp;chl=otpauth%3A%2F%2Ftotp%2F114531%3Fsecret%3DXYEAMKVHI2XIWWFQ%26issuer%3DCoinexMarket?lpv=87" width="200px">
+                    </div>
+                      <div class="clear"></div>
+                </div>
+                <div class="col-md">
+                 <p class="poptext" style="align-content: center;text-align: center;">Deposit  via this address is successful 0.0000000000 BTC</p>
+                 <p class="poptext" style="color: #F00!important;align-content: center;text-align: center;">Warning! Please use only new btc address,Wallet updated! from
+                1 aug use only  NEW btc address for deposits!</p>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-success close_popup_btn btn-sm">Obtain new Address</button>
+            </div>
+    </div>
+    </div>
+    <!-- popupwindow2 close -->
+
+     <!-- popupwindow3 open -->
+     <div class="container">
+            <div class="popup_div_withdraw3" style="display:none;">
+                <span><i class="fa fa-times" style="float:right!important"></i></span>
+                <div class=" text-center">
+                        <img src="images/header-logo1.png" width="200px">
+                      </div>
+                <h3 class="text-center">Enter your wallet address</h3>
+                <div class="clear:both"></div>
+                <p class="poptext" style="align-content: center;text-align: center;">Bitcoin wallet address</p>
+                     <div class="maindiv depositclass row text-center">
+                           <div class="col-md-8">
+                              <input style="" type="text" class="buyordertest_data1 form-control" placeholder="18tiN8GusNCvJEqbf8gVQs57uW5ZFD2MhJ">
+                          </div>
+                          <div class="clear"></div>
+                    </div>
+                    <p class="poptext" style="align-content: center;text-align: center;">Don't have a wallet address?Create one for free at <a href="">Indoex.io</a>
+                    </p>
+                <div class="text-center">
+                    <button class="btn btn-success close_popup_btn btn-sm" style="padding: 8px;font-size: 14px;">Go to Payment</button>
+                </div>
+                <p class="poptext" style="align-content: center;text-align: center;font-size: 11px;">Indoex is not a wallet.Instead, we send the coins ta any wallet you choose.
+                To minimise your risk, enter a walletyou own whenever possible
+                </p>
+        </div>
+        </div>
+        <!-- popupwindow3 close -->
+
+    <!-- popupwindow4 open -->
+    <div class="container">
+            <div class="popup_div_withdraw4" style="display:none;">
+                <span><i class="fa fa-times" style="float:right!important"></i></span>
+                <div class=" text-center">
+                        <img src="images/header-logo1.png" width="200px">
+                      </div>
+                <p class="poptext" style="align-content: center;text-align: center;">All transactions are secured and encrypted</p>
+                <img src="images/visa27.png" alt="" style="width: 100%;">
+                <div class="clear:both"></div>
+                     <div class="maindiv depositclass row text-center">
+
+                          <div class="col-md-8">
+                              <input style="" type="text" class="buyordertest_data4 form-control" placeholder="Your card holder name">
+                              <input style="" type="text" class="buyordertest_data4 form-control" placeholder="card  number">
+                              <div class="row">
+                                  <div class="col-md-6">
+                                        <select class="buyordertest_data4 form-control">
+                                                <option value="01" selected>January</option>
+                                                <option value="02">February </option>
+                                                <option value="03">March</option>
+                                                <option value="04">April</option>
+                                                <option value="05">May</option>
+                                                <option value="06">June</option>
+                                                <option value="07">July</option>
+                                                <option value="08">August</option>
+                                                <option value="09">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select></div>
+                                            <div class="col-md-6">
+                                            <select class="buyordertest_data4 form-control"  style="margin-left: 69px;">
+                                                    <option value="16" selected> 2016</option>
+                                                    <option value="17"> 2017</option>
+                                                    <option value="18"> 2018</option>
+                                                    <option value="19"> 2019</option>
+                                                    <option value="20"> 2020</option>
+                                                    <option value="21"> 2021</option>
+                                                </select>
+                                  </div>
+                              </div>
+                              <input style="" type="text" class="buyordertest_data4 form-control" placeholder="Security code(CVV)">
+                              <div style="margin-left:-42px;">
+                              <input type="checkbox" name="" id=""><label for="">change billing address <i class="fa fa-question-circle"></i> </label>
+                            </div>
+                          </div>
+                          <div class="clear"></div>
+                    </div>
+                <div class="text-center">
+                    <button class="btn btn-success btn-sm" style="text-transform: capitalize;padding: 7px; font-size: 14px;">Pay Now</button>
+                </div>
+                <p class="poptext" style="align-content: center;text-align: center;"><i class="fa fa-lock"></i> Pci  Secure Transactions
+                </p>
+        </div>
+        </div>
+
+        <!-- loader start -->
+        <div class="">
+            <div class="popuploader" style="display:none;">
+                <span class="close_popup"><i class="fa fa-times" style="float:right!important"></i></span>
+                        <div class="">
+                            <h2>Your Have Successsfully logged</h2>
+                            <div class="text-center">
+                                    <button class="btn btn-primary btn-sm" style="padding: 3px 17px 4px 13px;">Ok</button>
+                                    <button class="btn btn-danger close_popup_btn btn-sm" style="background-color: #050d1a!important">Cancel</button>
+                                </div>
+                        <!-- <img src="images/loder_indoex.gif" width=""> -->
+                      </div>
+                <div class="clear:both"></div>
+            </div>
+        </div>
+        <!-- loader end -->
+
+<div class="clearfix"></div>
+<footer class="page-footer font-small unique-color-dark">
+  <div style="background-color: #2aba4c;">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="mb-0">Get connected with us on social networks!</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+          <!-- Facebook -->
+          <a class="fb-ic"> <i class="fa fa-facebook white-text mr-4"> </i> </a>
+          <!-- Twitter -->
+          <a class="tw-ic"> <i class="fa fa-twitter white-text mr-4"> </i> </a>
+          <!-- Google +-->
+          <a class="gplus-ic"> <i class="fa fa-google-plus white-text mr-4"> </i> </a>
+          <!--Linkedin -->
+          <a class="li-ic"> <i class="fa fa-linkedin white-text mr-4"> </i> </a>
+          <!--Instagram-->
+          <a class="ins-ic"> <i class="fa fa-youtube white-text"> </i> </a> </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">Indoex Exchange</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>The growing awareness in the world every day crypto-currency. Digital currency exchange INDOX is also fast, easy and most important of all is bought and sold in a reliable manner.</p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Services</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p> <a href="#!">About Indoex</a> </p>
+        <p> <a href="#!">Frequently Asked Ques</a> </p>
+        <p> <a href="#!">Contact Us</a> </p>
+        <p> <a href="#!">Fee Structure</a> </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Legalisation</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p> <a href="#!">Terms of Use</a> </p>
+        <p> <a href="#!">Privacy Policy</a> </p>
+        <p> <a href="#!">Getting Started</a> </p>
+        <p> <a href="#!">Customer Support</a> </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p> <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+        <p> <i class="fa fa-envelope mr-3"></i> service@indoex.io</p>
+        <p> <i class="fa fa-phone mr-3"></i> info@indoex.io</p>
+        <p> <i class="fa fa-print mr-3"></i> bd@indoex.io</p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">
+      <div class="container">
+          <div class="footer_bottom_text1">
+              Copyright © INDOEX 2018. All rights reserved.
+          </div>
+          <!-- <div class="user_default_lang"><div class="user_default_lang_active en">en</div><div class="user_default_lang_drop"></div></div> -->
+      </div>
+      </div>
+  <!-- Copyright -->
+</div>
+</footer>
+
+<!--Main Layout-->
+
+<!-- SCRIPTS -->
+
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
+<!-- Tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/jquery.tinyscrollbar.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<div class="hiddendiv common"></div>
+<script>
+
+     //if you click on anything except the modal itself or the "popup" link, close the modal
+    $(document).click(function(event) {
+  if (!$(event.target).closest(".popup_div_withdraw2,.popup, .depositbtn, .popup_div_withdraw,.popup_div_withdraw3,.popup_div_withdraw4,.creditpop,.paymentpop,.popuploader,.trade").length) {
+    $("body").find(".popup_div_withdraw2,.popup_div_withdraw,.popup_div_withdraw3,.popup_div_withdraw4,.popuploader,#cover").fadeOut(1000);
+  }
+});
+
+        $(document).ready(function(){
+            $('.creditpop').click(function(){
+                $('.popup_div_withdraw4').fadeIn(1000);
+                $('#cover').fadeIn(500);
+                $('.fa-times').click(function(){
+                    $('.popup_div_withdraw4').fadeOut(500);
+                    $('#cover').fadeOut(500);
+                })
+            })
+        })
+
+        $(document).ready(function(){
+            $('.creditpop1').click(function(){
+                $('.popup_div_withdraw4').fadeIn(1000);
+                $('#cover').fadeIn(500);
+                $('.fa-times').click(function(){
+                    $('.popup_div_withdraw4').fadeOut(500);
+                    $('#cover').fadeOut(500);
+                })
+            })
+        })
+         // SideNav Initialization
+        $(".button-collapse").sideNav();
+
+        $(document).ready(function(){
+        $('.popup').click(function(){
+            $('.popup_div_withdraw').fadeIn(1000);
+            $('#cover').fadeIn(500)
+                $('.fa-times ,.close_popup_btn').click(function(){
+                    $('.popup_div_withdraw').fadeOut(1000);
+                    $('#cover').fadeOut(500);
+                })
+        })
+    })
+        $(document).ready(function(){
+            $('.depositbtn').click(function(){
+                $('.popup_div_withdraw2').fadeIn();
+                $('#cover').fadeIn(500);
+                $('.fa-times').click(function(){
+                    $('.popup_div_withdraw2').fadeOut(1000);
+                    $('#cover').fadeOut(500);
+                })
+            })
+        })
+        $(document).ready(function(){
+            $('.trade').click(function(){
+                $('.popuploader').fadeIn();
+                $('#cover').fadeIn(500);
+                $('.fa-times').click(function(){
+                    $('.popuploader').fadeOut(1000);
+                    $('#cover').fadeOut(500);
+                })
+            })
+        })
+
+    </script>
+<div class="drag-target" style="left: 0px; touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
+<div id="cover">
+    </div>
+</body>
+</html>

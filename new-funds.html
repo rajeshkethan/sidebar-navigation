@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Required meta tags always come first -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Indoex Exchange</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.css">
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Material Design Bootstrap -->
+<link href="css/mdb.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/messi.min.css" type="text/css">
+
+    <style>
+        .chart_container a {
+            text-decoration: none;
+            font-weight: normal;
+            color: #444;
+            background-color: #F7F7F7;
+            padding: 3px;
+        }
+
+            .chart_container a:hover {
+                background-color: #2aba4c;
+                color: #fff;
+            }
+
+            .chart_container a.active {
+                color: #fff;
+                background-color: #102342;
+            }
+
+        table td {
+            font-size: 11px;
+        }
+
+
+         h2{
+            line-height: 42px;
+            font-size: 18px;
+            margin: 13px 0px 9px 4px;
+          }
+        .tdform{
+            margin: auto;
+            width: -webkit-fill-available;
+            padding: 10px;
+        }
+        .fa{
+            cursor: pointer!important;
+
+        }
+        .nav .nav-item .active{
+            color: #495057;
+            background-color: #f5f5f5;
+            border-left-color: #EEE;
+            border-right-color: #EEE;
+            border-top: 2px solid blue;
+        }
+        .for_tabs .nav-tabs li .nav-link {
+                /* background: #f5f5f5; */
+                }
+                p{
+                    /* color: #5e5e5e!important; */
+                }
+                .poptext{
+                    padding: 3px;
+
+                }
+                @media(min-width:768px) and (max-width:1024px){
+                    .popup_div_withdraw2 {
+                        width: 390px;
+                        position: fixed;
+                        top: 20%;
+                        left: 50%;
+                    }
+
+                }
+
+                @media (min-width:320px) and (max-width:576px) {
+                    .popup_div_withdraw2 {
+                        width: 390px;
+                        position: fixed;
+                        top: 20%;
+                        left: 50%;
+                    }
+                }
+
+                @media(min-width:768px) and (max-width:1024px){
+                    .popup_div_withdraw {
+                        width: 403px;
+                        position: fixed;
+                        top: 20%;
+                        left: 50%;
+                    }
+                       .btn{
+                           text-transform: capitalize!important;
+                       }
+                    .buyordertest_data {
+                        margin: 10px 0px 10px -45px;
+                    }
+                    .div_insidefield {
+                            position: absolute;
+                            top: 11px;
+                            background-color: #d3d3d3;
+                            color: #8194ac;
+                            padding: 5px;
+                            left:-29px;
+                            border-radius: 3px 0 0 3px;
+                            width: 59px;
+                  }
+                }
+
+                @media (min-width:320px) and (max-width:576px) {
+                    .popup_div_withdraw {
+                        width: 403px;
+                        position: fixed;
+                        top: 20%;
+                        left: 50%;
+                    }
+                    .buyordertest_data1{
+                            width:100%!important;
+                        }
+                    .buyordertest_data {
+                        margin: 10px 0px 10px 16px;
+                    }
+                    .buylabel {
+                        margin: -8px 0px 9px 22px;
+                        display: block;
+                        }
+                    .div_insidefield {
+                            position: absolute;
+                            top: 11px;
+                            background-color: #d3d3d3;
+                            color: #8194ac;
+                            padding: 5px;
+                            left: 33px;
+                            border-radius: 3px 0 0 3px;
+                            width: 59px;
+                  }
+                }
+                .dropdown:hover>.dropdown-menu {
+                  display: block;
+                       }
+                       footer p{
+                           color: #fff!important;
+                       }
+                       /* sidebar css */
+                       body {
+                        margin:0px;
+                        padding:0px;
+                        box-sizing:border-box;
+                        }
+    .main_sidebar {
+    min-height:50vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    margin-left: 47px;
+    width:227px;
+    transition: all 300ms cubic-bezier(0.65, 0.05, 0.36, 1);
+    will-change: left, width;
+    box-shadow: inset -1px 0 10px rgba(0, 0, 0, 0.4);
+    background: #293749;
+    }
+.main_sidebar:after {
+    content: '';
+    background-color: #293749;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    width: 58px;
+}
+.main_sidebar ul {
+    list-style:none;
+    padding: 10px 10px 10px 62px;
+}
+.main_sidebar ul li {
+    padding:10px;
+}
+.main_sidebar ul li a {
+    color:#fff;
+    display:block;
+}
+.main_sidebar ul li i {
+    float:left;
+    color:grey;
+    margin-left:-58px;
+    font-size:24px;
+    padding-left:7px;
+}
+.main_sidebar ul li:hover {
+    background:#167696;
+}
+.main_sidebar ul li a:hover {
+    color:#fff;
+    text-decoration:none;
+}
+.main_sidebar ul li:hover i {
+    color:#fff;
+}
+.main_sidebar ul li.active {
+    background:#0f4698;
+}
+.main_sidebar ul li.active i {
+    color:#fff;
+}
+.main_sidebar ul li.active:hover {
+    background:#167696;
+}
+.main_sidebar ul li.active:hover i {
+    color:#fff;
+}
+li{
+    color: #fff !important;
+}
+.main2 {
+    float:right;
+    color:#fff;
+    display:block;
+    width:100%;
+}
+.setting ul li[data-v-2c102349] {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    color: #222;
+    padding: 20px 0;
+    border-bottom: 1px dashed #e7ecf0;
+}
+.setting ul li .btn-margin[data-v-2c102349] {
+    margin-right: 70px;
+}
+.setting ul li .handle[data-v-2c102349] {
+    float: right;
+    cursor: pointer;
+}
+.setting ul[data-v-2c102349] {
+    /* overflow: hidden; */
+    padding-left: 50px;
+    -webkit-box-shadow: 0 2px 8px 0 #edeff4;
+    box-shadow: 0 2px 8px 0 #edeff4;
+}
+p[data-v-35a4ec23] {
+    width: 1030px;
+    height: 50px;
+    padding-left: 20px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #354052;
+    text-align: left;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 10px 0 #edeff4; 
+    box-shadow: 0 2px 10px 0 #edeff4;
+}
+.setting ul li .name[data-v-2c102349] {
+    float: left;
+    width: 120px;
+    color: #000;
+}
+.setting ul li .cont[data-v-2c102349], .setting ul li .cont p[data-v-2c102349], .setting ul li .cont span[data-v-2c102349] {
+    float: left;
+}
+.setting ul li .btn-margin[data-v-2c102349] {
+    margin-right: 70px;
+}
+.setting ul li .handle[data-v-2c102349] {
+    float: right;
+    cursor: pointer;
+}
+.btn-link:hover {
+    color: #185de9;
+}
+.btn-link {
+    cursor: pointer;
+    color: #465ff0;
+}
+.setting ul li .mobile-box[data-v-2c102349] {
+    float: left;
+    width: 100%;
+}
+.mag-top[data-v-2c102349] {
+    margin-top: 10px;
+}
+.setting ul li .name[data-v-2c102349] {
+    float: left;
+    width: 120px;
+}
+.CertificationLevel[data-v-2c102349] {
+    height: auto;
+    -webkit-box-shadow: 0 2px 10px 0 #edeff4;
+    box-shadow: 0 2px 10px 0 #edeff4;
+    background: #fff;
+}
+.setting ul li .cont[data-v-2c102349], .setting ul li .cont p[data-v-2c102349], .setting ul li .cont span[data-v-2c102349] {
+    float: left;
+}
+aside[data-v-2c102349] {
+    width: 220px;
+}
+aside[data-v-5dbc4fdb] {
+    width: 215px;
+    float: left;
+    -webkit-box-shadow: 2px 0 88px 0 #edeff4;
+    box-shadow: 2px 0 88px 0 #edeff4;
+    margin-bottom: 40px;
+    background: #fff;
+    padding-bottom: 8px;
+}
+main[data-v-2c102349] {
+    float: right;
+    width: 1050px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 8px 0 #edeff4;
+    box-shadow: 0 2px 8px 0 #edeff4;
+    background-color: #fff;
+}
+#content-box main {
+    float: right;
+    margin-bottom: 40px;
+}
+aside .menu .title .setting-icon[data-v-5dbc4fdb] {
+    width: 20px;
+    height: 20px;
+    /* position: absolute; */
+    top: 15px;
+    left: 24px;
+}
+aside .menu .title[data-v-5dbc4fdb] {
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 50px;
+    text-align: left;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 2px;
+    color: #7c88a0;
+    background-color: #fff;
+    border-bottom: 1px solid #edeff4;
+}
+aside .menu li[data-v-5dbc4fdb] {
+    margin-bottom: 5px;
+}
+#content-box #user-center {
+    overflow: hidden;
+    background-color: #f5f7f9;
+}
+#content-box #content {
+    overflow: hidden;
+    width: 1280px;
+    max-width: 1280px;
+    margin: 40px auto 0;
+}
+#accountSafe[data-v-2c102349] {
+    width: 1280px;
+    margin: 0 auto;
+    position: relative;
+}
+    </style>
+
+</head>
+
+<body class="hidden-sn mdb-skin" aria-busy="true">
+
+<!--Double navigation-->
+<header>
+        <!-- Sidebar navigation -->
+        <div id="slide-out" class="side-nav sn-bg-4 mdb-sidenav" style="transform: translateX(-100%);">
+            <ul class="custom-scrollbar list-unstyled" style="max-height:100vh;">
+                <!-- Logo -->
+                <li>
+                    <div class="logo-wrapper waves-light waves-effect waves-light">
+                        <a href=""><img src="images/logo.png" class="img-fluid flex-center"></a>
+                    </div>
+                </li>
+                <!--/. Logo -->
+                <!--Social-->
+                <li>
+                    <ul class="social">
+                        <li><a href="" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
+                        <li><a href="" class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a></li>
+                        <li><a href="" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
+                        <li><a href="" class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
+                    </ul>
+                </li>
+                <!--/Social-->
+                <!--Search Form-->
+                <!-- <li>
+                    <form class="search-form" role="search">
+                                <div class="form-group md-form mt-0 pt-1 waves-light waves-effect waves-light">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </div>
+                            </form>
+                </li> -->
+                <!--/.Search Form-->
+                <!-- Side navigation links -->
+                <li>
+                    <ul class="collapsible collapsible-accordion">
+                        <li><a class="collapsible-header waves-effect arrow-r">Trade<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect" target="blank">My Balances</a></li>
+                                    <li><a href="#" class="waves-effect" target="blank">My Transactions</a></li>
+                                    <li><a href="#" class="waves-effect" target="blank">Custom Pairing</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="collapsible-header waves-effect arrow-r">Ledger<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect" target="blank">Coin Info</a></li>
+                                    <li><a href="#" class="waves-effect" target="blank">Wallet Status</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="collapsible-header waves-effect arrow-r">Settings<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect" target="blank">Login History</a></li>
+                                  <li><a href="#" class="waves-effect" target="blank">Profile Settings</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="waves-effect" href="#" target="blank">Orders</a></li>
+                        <li><a class="waves-effect" href="#" target="blank">History</a></li>
+                        <li><a class="waves-effect" href="#" target="blank">Add coin</a></li>
+                        <li><a class="waves-effect" href="#" target="blank">Affiliate</a></li>
+                        <li><a class="waves-effect" href="#" target="blank">Invest Box</a></li>
+                        <li><a class="collapsible-header waves-effect arrow-r">Settings<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect" target="blank">Login History</a></li>
+                                  <li><a href="#" class="waves-effect" target="blank">Profile Settings</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- <div class="text-center" style="margin-top: 0px;">
+                             <button data-activates="slide-out" class="btn btn-md btn-rounded btn-light-green">Log out</button> 
+                        </div> -->
+                    </ul>
+                </li>
+                <!--/. Side navigation links -->
+            </ul>
+            <div class="sidenav-bg mask-strong"></div>
+        </div>
+        <!--/. Sidebar navigation -->
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+            <!-- SideNav slide-out button -->
+            <div class="float-left mobilemenu">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+            </div>
+            <!-- Breadcrumb-->
+            <div class="breadcrumb-dn mr-auto ">
+                <img src="images/logo.png" width="180" alt="logo" class="ml-15"/>
+            </div>
+            <div class="navview">
+                    <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                            <li class="nav-item"> <a class="nav-link waves-effect waves-light"><span class="clearfix d-none d-sm-inline-block">Dashboard</span></a> </li>
+                            <li class="nav-item dropdown"> <a class="nav-link waves-effect waves-light dropdown-toggle" data-toggle="dropdown" href="#"><span class="clearfix d-none d-sm-inline-block caret">Trade</span></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">My Balances</a></li>
+                              <li><a href="#">My Transactions</a></li>
+                              <li><a href="#">Custom Pairing</a></li>
+                            </ul></li>
+                            <li class="nav-item"> <a class="nav-link waves-effect waves-light "><span class="clearfix d-none d-sm-inline-block">Ledger</span></a> </li>
+                            <li class="nav-item  dropdown"> <a class="nav-link waves-effect waves-light dropdown-toggle" data-toggle="dropdown" href="#"><span class="clearfix d-none d-sm-inline-block">Info</span></a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">Coin Info</a></li>
+                                  <li><a href="#">Wallet Status</a></li>
+                                </ul></li>
+                               </li>
+                            <li class="nav-item  dropdown"> <a class="nav-link waves-effect waves-light dropdown-toggle" data-toggle="dropdown" href="#"><span class="clearfix d-none d-sm-inline-block">Settings</span></a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">Login History</a></li>
+                                  <li><a href="#">Profile Settings</a></li>
+                                </ul></li>
+                               </li>
+                          </li>
+                            <li class="nav-item"> <a class="nav-link waves-effect waves-light"><span class="clearfix d-none d-sm-inline-block">Orders</span></a> </li>
+                            <li class="nav-item"> <a class="nav-link waves-effect waves-light"><span class="clearfix d-none d-sm-inline-block">History</span></a> </li>
+                            <!-- <li class="nav-item"> <a class="nav-link waves-effect waves-light"><span class="clearfix d-none d-sm-inline-block">Add coin</span></a> </li> -->
+                            <li class="nav-item"> <a class="nav-link waves-effect waves-light"><span class="clearfix d-none d-sm-inline-block">Affiliate</span></a> </li>
+                            <li class="nav-item"> <a class="nav-link waves-effect waves-light"><span class="clearfix d-none d-sm-inline-block">Invest Box</span></a> </li>
+                            <li class="nav-item  dropdown" style="margin-right: 92px;"> <a class="nav-link waves-effect waves-light dropdown-toggle" data-toggle="dropdown" href="#"><span class="clearfix d-none d-sm-inline-block"><i class="fa fa-user"></i></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">some link</a></li>
+                                    <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+                                  </ul></li>
+                                 </li>
+                          <!-- <div class="float-right" style="margin-top: -7px;">
+                            <button data-activates="slide-out" class="btn btn-md btn-rounded btn-light-green">Log out</button>
+                          </div> -->
+                        </ul>
+            </div>
+        </nav>
+        <!-- /.Navbar -->
+    </header>
+    <!--/.Double navigation-->
+
+<!--Main Layout-->
+<div class="content-box"><div class="" id="user-content"><div class="" id="content"><div class="" id="accountSafe">
+  <main class="content">
+      <div class="">
+          <div class="sidebar">
+                        <!-- <section class="col main2">
+                                <div><h2>Account</h2>
+                                    <div><h3>Email &nbsp;&nbsp;&nbsp;&nbsp;r***@gmail.com</h3></div>
+                                    <div><h3>Mobile Device &nbsp;&nbsp;&nbsp;&nbsp;Cellphone not Set</h3></div>
+                                </div>
+                        </section> -->
+                        <section class="" data-v-2c102349=""><div data-v-2c102349="" class="account-safe-body"><div data-v-2c102349="" class="setting"><div data-v-35a4ec23="" data-v-2c102349=""><p data-v-35a4ec23="">Account</p></div> <ul data-v-2c102349=""><li data-v-2c102349=""><span data-v-2c102349="" class="icon mail-icon"></span> <p data-v-2c102349="" class="name">Email</p> <div data-v-2c102349="" class="cont mail"><p data-v-2c102349="">s***@gmail.com</p> <!----> <!----> <span data-v-2c102349="" class="has-mail">Verified</span></div> <!----> <!----></li> <li data-v-2c102349=""><span data-v-2c102349="" class="icon mobile-icon"></span> <p data-v-2c102349="" class="name">Mobile Device</p> <div data-v-2c102349="" class="mobile-cont"><div data-v-2c102349="" class="mobile-box"><div data-v-2c102349="" class="cont"><p data-v-2c102349="" class="no-google">Cellphone not Set</p></div> <span data-v-2c102349="" class="handle btn-link btn-margin">Binding</span></div> <div data-v-2c102349="" class="mobile-box mag-top"><div data-v-2c102349="" class="cont"><p data-v-2c102349="" class="has-google">Google Auth Set</p></div> <span data-v-2c102349="" class="handle btn-link btn-margin">Reset</span></div></div></li> <li data-v-2c102349=""><span data-v-2c102349="" class="icon psw-icon"></span> <p data-v-2c102349="" class="name">Password</p> <div data-v-2c102349="" class="cont fund-psw"><p data-v-2c102349="" class="alreadySet">Already Set</p></div> <span data-v-2c102349="" class="handle btn-link btn-margin">Change</span></li> <li data-v-2c102349=""><span data-v-2c102349="" class="icon psw-icon"></span> <p data-v-2c102349="" class="name">Log in Verify code</p> <div data-v-2c102349="" class="cont"><p data-v-2c102349="" class="has-google">Enabled</p></div> <span data-v-2c102349="" class="handle slide-icon slide-open btn-margin"></span></li> <li data-v-2c102349=""><span data-v-2c102349="" class="pin-icon"></span> <p data-v-2c102349="" class="name">PIN</p> <div data-v-2c102349="" class="cont fund-psw"><!----> <p data-v-2c102349="" class="alreadySet">Already Set</p></div> <!----> <span data-v-2c102349="" class="handle btn-link btn-margin">Reset</span> <!----> <span data-v-2c102349="" class="handle btn-link">&nbsp;&nbsp;&nbsp;&nbsp;</span> <span data-v-2c102349="" class="handle btn-link">Change</span></li> <li data-v-2c102349=""><span data-v-2c102349="" class="icon code-icon"></span> <p data-v-2c102349="" class="name">Verify Code Preference</p> <div data-v-2c102349="" class="cont fund-psw"><div data-v-2c102349=""><!----> <p data-v-2c102349="" class="alreadySet">Google Auth code </p></div></div> <span data-v-2c102349="" class="handle btn-link btn-margin">Change</span></li></ul></div> <div data-v-2c102349="" class="CertificationLevel"><div data-v-35a4ec23="" data-v-2c102349=""><p data-v-35a4ec23="">Authentication level</p></div> <ul data-v-2c102349=""><li data-v-2c102349="" class="nameLevel">Identification Level</li> <li data-v-2c102349="" class="circle l0 highlight">L0</li> <li data-v-2c102349="" class="line"></li> <li data-v-2c102349="" class="circle l1">L1</li> <li data-v-2c102349="" class="line"></li> <li data-v-2c102349="" class="circle l2">L2</li></ul> <ul data-v-2c102349="" class="withDrawLimit"><li data-v-2c102349="" class="limit24h">24h Withdrawal Limit</li> <li data-v-2c102349="" class="margin-150">2 BTC</li> <li data-v-2c102349="" class="margin-150"><dl data-v-2c102349=""><dt data-v-2c102349="">70 BTC</dt> <dd data-v-2c102349=""><span data-v-2c102349="">Complete Identification</span></dd></dl></li> <li data-v-2c102349="" class="margin-150 moreLimit"><dl data-v-2c102349=""><dt data-v-2c102349="">Higher Limit</dt> <dd data-v-2c102349=""><span data-v-2c102349="">Contact Us</span></dd></dl></li></ul> <!----></div> <!----><div class="el-loading-mask" style="display: none;"><div class="el-loading-spinner"><svg viewBox="25 25 50 50" class="circular"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg><!----></div></div></div></section>
+          </div>
+      </div>
+  </main>
+  <aside>
+      <ul data-v-5dbc4fdb="" class="menu setting"><li data-v-5dbc4fdb="" class="title"><img data-v-5dbc4fdb="" src="data:image/png;base64,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" class="setting-icon"><span data-v-5dbc4fdb="">Personal Configration</span></li> <li data-v-5dbc4fdb="" class="active"><a data-v-5dbc4fdb="" href="/#/accountSafe">Account</a></li> <!----> <li data-v-5dbc4fdb="" class=""><a data-v-5dbc4fdb="" href="/#/authentication">Identification</a></li></ul>
+      <ul data-v-5dbc4fdb="" class="menu assets"><li data-v-5dbc4fdb="" class="title"><img data-v-5dbc4fdb="" src="data:image/png;base64,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" class="setting-icon"><span data-v-5dbc4fdb="">Assets</span></li> <li data-v-5dbc4fdb="" class=""><a data-v-5dbc4fdb="" href="/#/myAssets">My Assets</a></li> <li data-v-5dbc4fdb="" class=""><a data-v-5dbc4fdb="" href="/#/recharge">Deposit</a></li> <li data-v-5dbc4fdb="" class=""><a data-v-5dbc4fdb="" href="/#/withdraw">Withdraw</a></li> <li data-v-5dbc4fdb="" class=""><a data-v-5dbc4fdb="" href="/#/rechargeRecord">Ledger</a></li> <li data-v-5dbc4fdb="" class=""><a data-v-5dbc4fdb="" href="/#/addresses">Addresses</a></li></ul>
+      <ul data-v-5dbc4fdb="" class="menu order"><li data-v-5dbc4fdb="" class="title"><img data-v-5dbc4fdb="" src="data:image/png;base64,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" class="setting-icon"><span data-v-5dbc4fdb="">Orders</span></li> <li data-v-5dbc4fdb="" class=""><a data-v-5dbc4fdb="" href="/#/orderNow">Open Orders</a></li> <li data-v-5dbc4fdb="" class=""><a data-v-5dbc4fdb="" href="/#/orderHistory">Closed Orders</a></li></ul>
+      <ul data-v-5dbc4fdb="" class="menu api"><li data-v-5dbc4fdb="" class="title"><img data-v-5dbc4fdb="" src="data:image/png;base64,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" class="setting-icon"><span data-v-5dbc4fdb="">API</span></li> <li data-v-5dbc4fdb="" class=""><a data-v-5dbc4fdb="" href="/#/myApi">My API</a></li></ul>
+      <ul data-v-5dbc4fdb="" class="menu activity"><li data-v-5dbc4fdb="" class="title"><img data-v-5dbc4fdb="" src="data:image/png;base64,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" class="setting-icon"><span data-v-5dbc4fdb="">Promotion</span></li> <li data-v-5dbc4fdb="" class=""><a data-v-5dbc4fdb="" href="/invite.html">Invitation Program<img data-v-5dbc4fdb="" src="data:image/png;base64,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" class="hot-icon"></a></li></ul>
+  </aside>
+</div></div></div></div>
+    <!-- popupwindow open -->
+    <div class="container">
+        <div class="popup_div_withdraw" style="display:none;">
+            <span ><i class="fa fa-times" style="float:right!important"></i></span>
+            <h3 class="text-center" >Withdraw from USDPM</h3>
+            <div class="clear:both"></div>
+             <div style="display:block">
+                 <h2 class="text-center" style="display:none">Please, confirm Your buy order</h2>
+                <div class="maindiv row">
+                     <div class="col-md-4">
+                  <label class="buylabel">Your Balance :</label>
+                  </div>
+                  <div class="col-md-8">
+                      <span class="div_insidefield ">USDPM</span>
+                  <input type="text"  class="buyordertest_data form-control" name="" value="0" style="pointer-events: none;;width: 91%">
+                  </div>
+                  <div class="clear"></div>
+                 </div>
+                 <div class="maindiv  row">
+                     <div class="col-md-4 ">
+                       <label class="buylabel" style="text-align: start">Receiver Address :</label></div>
+                       <div class="col-md-8">
+                          <input style="width: 91%" type="text" class="buyordertest_data form-control" placeholder="receiver address">
+                      </div>
+                      <div class="clear"></div>
+                </div>
+                 <div class="maindiv row"  style="display: none;">
+                     <div class="col-md-4">
+                       <label class="buylabel">Tag Id( optional) :</label></div>
+                       <div class="col-md-8">
+                          <input style="width: 91%" class="buyordertest_data" type="text" placeholder="Tag Id( optional)" >
+                      </div>
+                      <div class="clear"></div>
+                </div>
+                <div class="maindiv  row">
+                        <div class="col-md-4">
+                          <label class="buylabel">Amount :</label></div>
+                          <div class="col-md-8 ">
+                             <input style="width: 91%" type="text" class="buyordertest_data form-control" placeholder="amount" >
+                         </div>
+                    <div class="clear"></div>
+                 </div>
+                 <div class="maindiv  row">
+                    <div class="col-md-4">
+                 <label class="buylabel">Fee for Coin/Token :</label>
+                 </div>
+                 <div class="col-md-8">
+                 <span class="div_insidefield ">USDPM</span>
+                 <input type="text"  class="buyordertest_data form-control"  name="" value="0" style="pointer-events: none;width: 91%">
+                 </div>
+                 <div class="clear"></div>
+                 </div>
+                 <div class="maindiv  row">
+                     <div class="col-md-4">
+                  <label class="buylabel">Total :</label>
+                  </div>
+                  <div class="col-md-8">
+                  <span class="div_insidefield ">USDPM</span>
+                  <input type="text"  class="buyordertest_data form-control"  name="" value="0" style="pointer-events: none;width: 91%">
+                  </div>
+                  <div class="clear"></div>
+                 <div>
+                 </div>
+                 <div style="display:block">
+                     <!-- <button class="success_btn text-center">CONFIRM</button> -->
+                     <!-- <button class="failure_btn">CANCEL</button> -->
+                 </div>
+                <div class="text_class">
+                    Please carefully verify all values.
+                    <br>
+                    And verify your Email to approve this transaction.
+                 </div>
+             </div>
+            <div class="clear:both"></div>
+            <p id="withdrawinfo" style="color: #F00;align-content: center;text-align: center;"></p>
+            <div class="text-center" style="display:none;"> Invalid Input </div>
+            <div class="text-center">
+                <button class="btn btn-danger close_popup_btn btn-sm" style="background-color: #050d1a!important">Cancel</button>
+                <button class="btn btn-primary btn-sm">Ok</button>
+            </div>
+        </div>
+    </div></div>
+    <!-- popupwindow close -->
+
+
+    <!-- popupwindow2 open -->
+    <div class="container">
+        <div class="popup_div_withdraw2" id="myModal" style="display:none;">
+            <span><i class="fa fa-times" style="float:right!important"></i></span>
+            <h3 class="text-center" >DEPOSIT BTC</h3>
+            <div class="clear:both"></div>
+            <P class="poptext" style="color: green!important;align-content: center;text-align: center;">Wallet status :Online(550427 blocks)</P>
+            <p class="poptext" style="align-content: center;text-align: center;">Your Deposit address (ADDR)</p>
+                 <div class="maindiv depositclass row text-center">
+                       <div class="col-md-8">
+                          <input style="" type="text" class="buyordertest_data1 form-control" value="18tiN8GusNCvJEqbf8gVQs57uW5ZFD2MhJ">
+                      </div>
+                      <div class="col text-center">
+                      <img src="https://chart.googleapis.com/chart?chs=200x200&amp;chld=M|0&amp;cht=qr&amp;chl=otpauth%3A%2F%2Ftotp%2F114531%3Fsecret%3DXYEAMKVHI2XIWWFQ%26issuer%3DCoinexMarket?lpv=87" width="200px">
+                    </div>
+                      <div class="clear"></div>
+                </div>
+                <div class="col-md">
+                 <p class="poptext" style="align-content: center;text-align: center;">Deposit  via this address is successful 0.0000000000 BTC</p>
+                 <p class="poptext" style="color: #F00!important;align-content: center;text-align: center;">Warning! Please use only new btc address,Wallet updated! from
+                1 aug use only  NEW btc address for deposits!</p>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-success close_popup_btn btn-sm">Obtain new Address</button>
+            </div>
+    </div>
+    </div>
+    <!-- popupwindow2 close -->
+
+     <!-- popupwindow3 open -->
+     <div class="container">
+            <div class="popup_div_withdraw3" style="display:none;">
+                <span><i class="fa fa-times" style="float:right!important"></i></span>
+                <div class=" text-center">
+                        <img src="images/header-logo1.png" width="200px">
+                      </div>
+                <h3 class="text-center">Enter your wallet address</h3>
+                <div class="clear:both"></div>
+                <p class="poptext" style="align-content: center;text-align: center;">Bitcoin wallet address</p>
+                     <div class="maindiv depositclass row text-center">
+                           <div class="col-md-8">
+                              <input style="" type="text" class="buyordertest_data1 form-control" placeholder="18tiN8GusNCvJEqbf8gVQs57uW5ZFD2MhJ">
+                          </div>
+                          <div class="clear"></div>
+                    </div>
+                    <p class="poptext" style="align-content: center;text-align: center;">Don't have a wallet address?Create one for free at <a href="">Indoex.io</a>
+                    </p>
+                <div class="text-center">
+                    <button class="btn btn-success close_popup_btn btn-sm" style="padding: 8px;font-size: 14px;">Go to Payment</button>
+                </div>
+                <p class="poptext" style="align-content: center;text-align: center;font-size: 11px;">Indoex is not a wallet.Instead, we send the coins ta any wallet you choose.
+                To minimise your risk, enter a walletyou own whenever possible
+                </p>
+        </div>
+        </div>
+        <!-- popupwindow3 close -->
+
+    <!-- popupwindow4 open -->
+    <div class="container">
+            <div class="popup_div_withdraw4" style="display:none;">
+                <span><i class="fa fa-times" style="float:right!important"></i></span>
+                <div class=" text-center">
+                        <img src="images/header-logo1.png" width="200px">
+                      </div>
+                <p class="poptext" style="align-content: center;text-align: center;">All transactions are secured and encrypted</p>
+                <img src="images/visa27.png" alt="" style="width: 100%;">
+                <div class="clear:both"></div>
+                     <div class="maindiv depositclass row text-center">
+
+                          <div class="col-md-8">
+                              <input style="" type="text" class="buyordertest_data4 form-control" placeholder="Your card holder name">
+                              <input style="" type="text" class="buyordertest_data4 form-control" placeholder="card  number">
+                              <div class="row">
+                                  <div class="col-md-6">
+                                        <select class="buyordertest_data4 form-control">
+                                                <option value="01" selected>January</option>
+                                                <option value="02">February </option>
+                                                <option value="03">March</option>
+                                                <option value="04">April</option>
+                                                <option value="05">May</option>
+                                                <option value="06">June</option>
+                                                <option value="07">July</option>
+                                                <option value="08">August</option>
+                                                <option value="09">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select></div>
+                                            <div class="col-md-6">
+                                            <select class="buyordertest_data4 form-control"  style="margin-left: 69px;">
+                                                    <option value="16" selected> 2016</option>
+                                                    <option value="17"> 2017</option>
+                                                    <option value="18"> 2018</option>
+                                                    <option value="19"> 2019</option>
+                                                    <option value="20"> 2020</option>
+                                                    <option value="21"> 2021</option>
+                                                </select>
+                                  </div>
+                              </div>
+                              <input style="" type="text" class="buyordertest_data4 form-control" placeholder="Security code(CVV)">
+                              <div style="margin-left:-42px;">
+                              <input type="checkbox" name="" id=""><label for="">change billing address <i class="fa fa-question-circle"></i> </label>
+                            </div>
+                          </div>
+                          <div class="clear"></div>
+                    </div>
+                <div class="text-center">
+                    <button class="btn btn-success btn-sm" style="text-transform: capitalize;padding: 7px; font-size: 14px;">Pay Now</button>
+                </div>
+                <p class="poptext" style="align-content: center;text-align: center;"><i class="fa fa-lock"></i> Pci  Secure Transactions
+                </p>
+        </div>
+        </div>
+
+        <!-- loader start -->
+        <div class="">
+            <div class="popuploader" style="display:none;">
+                <span class="close_popup"><i class="fa fa-times" style="float:right!important"></i></span>
+                        <div class="">
+                            <h2>Your Have Successsfully logged</h2>
+                            <div class="text-center">
+                                    <button class="btn btn-primary btn-sm" style="padding: 3px 17px 4px 13px;">Ok</button>
+                                    <button class="btn btn-danger close_popup_btn btn-sm" style="background-color: #050d1a!important">Cancel</button>
+                                </div>
+                        <!-- <img src="images/loder_indoex.gif" width=""> -->
+                      </div>
+                <div class="clear:both"></div>
+            </div>
+        </div>
+        <!-- loader end -->
+
+<div class="clearfix"></div>
+<footer class="page-footer font-small unique-color-dark">
+  <div style="background-color: #2aba4c;">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="mb-0">Get connected with us on social networks!</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+          <!-- Facebook -->
+          <a class="fb-ic"> <i class="fa fa-facebook white-text mr-4"> </i> </a>
+          <!-- Twitter -->
+          <a class="tw-ic"> <i class="fa fa-twitter white-text mr-4"> </i> </a>
+          <!-- Google +-->
+          <a class="gplus-ic"> <i class="fa fa-google-plus white-text mr-4"> </i> </a>
+          <!--Linkedin -->
+          <a class="li-ic"> <i class="fa fa-linkedin white-text mr-4"> </i> </a>
+          <!--Instagram-->
+          <a class="ins-ic"> <i class="fa fa-youtube white-text"> </i> </a> </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">Indoex Exchange</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>The growing awareness in the world every day crypto-currency. Digital currency exchange INDOX is also fast, easy and most important of all is bought and sold in a reliable manner.</p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Services</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p> <a href="#!">About Indoex</a> </p>
+        <p> <a href="#!">Frequently Asked Ques</a> </p>
+        <p> <a href="#!">Contact Us</a> </p>
+        <p> <a href="#!">Fee Structure</a> </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Legalisation</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p> <a href="#!">Terms of Use</a> </p>
+        <p> <a href="#!">Privacy Policy</a> </p>
+        <p> <a href="#!">Getting Started</a> </p>
+        <p> <a href="#!">Customer Support</a> </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p> <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+        <p> <i class="fa fa-envelope mr-3"></i> service@indoex.io</p>
+        <p> <i class="fa fa-phone mr-3"></i> info@indoex.io</p>
+        <p> <i class="fa fa-print mr-3"></i> bd@indoex.io</p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">
+      <div class="container">
+          <div class="footer_bottom_text1">
+              Copyright © INDOEX 2018. All rights reserved.
+          </div>
+          <!-- <div class="user_default_lang"><div class="user_default_lang_active en">en</div><div class="user_default_lang_drop"></div></div> -->
+      </div>
+      </div>
+  <!-- Copyright -->
+</div>
+</footer>
+
+<!--Main Layout-->
+
+<!-- SCRIPTS -->
+
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
+<!-- Tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/jquery.tinyscrollbar.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<div class="hiddendiv common"></div>
+<script>
+
+     //if you click on anything except the modal itself or the "popup" link, close the modal
+    $(document).click(function(event) {
+  if (!$(event.target).closest(".popup_div_withdraw2,.popup, .depositbtn, .popup_div_withdraw,.popup_div_withdraw3,.popup_div_withdraw4,.creditpop,.paymentpop,.popuploader,.trade").length) {
+    $("body").find(".popup_div_withdraw2,.popup_div_withdraw,.popup_div_withdraw3,.popup_div_withdraw4,.popuploader,#cover").fadeOut(1000);
+  }
+});
+
+        $(document).ready(function(){
+            $('.creditpop').click(function(){
+                $('.popup_div_withdraw4').fadeIn(1000);
+                $('#cover').fadeIn(500);
+                $('.fa-times').click(function(){
+                    $('.popup_div_withdraw4').fadeOut(500);
+                    $('#cover').fadeOut(500);
+                })
+            })
+        })
+
+        $(document).ready(function(){
+            $('.creditpop1').click(function(){
+                $('.popup_div_withdraw4').fadeIn(1000);
+                $('#cover').fadeIn(500);
+                $('.fa-times').click(function(){
+                    $('.popup_div_withdraw4').fadeOut(500);
+                    $('#cover').fadeOut(500);
+                })
+            })
+        })
+         // SideNav Initialization
+        $(".button-collapse").sideNav();
+
+        $(document).ready(function(){
+        $('.popup').click(function(){
+            $('.popup_div_withdraw').fadeIn(1000);
+            $('#cover').fadeIn(500)
+                $('.fa-times ,.close_popup_btn').click(function(){
+                    $('.popup_div_withdraw').fadeOut(1000);
+                    $('#cover').fadeOut(500);
+                })
+        })
+    })
+        $(document).ready(function(){
+            $('.depositbtn').click(function(){
+                $('.popup_div_withdraw2').fadeIn();
+                $('#cover').fadeIn(500);
+                $('.fa-times').click(function(){
+                    $('.popup_div_withdraw2').fadeOut(1000);
+                    $('#cover').fadeOut(500);
+                })
+            })
+        })
+        $(document).ready(function(){
+            $('.trade').click(function(){
+                $('.popuploader').fadeIn();
+                $('#cover').fadeIn(500);
+                $('.fa-times').click(function(){
+                    $('.popuploader').fadeOut(1000);
+                    $('#cover').fadeOut(500);
+                })
+            })
+        })
+
+    </script>
+<div class="drag-target" style="left: 0px; touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
+<div id="cover">
+    </div>
+</body>
+</html>
